@@ -1,0 +1,22 @@
+[
+  {
+    "categoria": "Atrações",
+    "nome": "Templo Doi Suthep",
+    "descricao": "Templo famoso localizado nas montanhas de Chiang Mai."
+  },
+  {
+    "categoria": "Atrações",
+    "nome": "Elephant Sanctuary",
+    "descricao": "Experiência ética com elefantes resgatados."
+  },
+  {
+    "categoria": "Transporte",
+    "nome": "Tuk Tuk",
+    "descricao": "Transporte tradicional e muito usado na Tailândia."
+  },
+  {
+    "categoria": "Transporte",
+    "nome": "Scooter",
+    "descricao": "Forma popular de explorar a cidade."
+  }
+]
