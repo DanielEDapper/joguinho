@@ -1,6 +1,6 @@
 function buscarFilme()
 {
-    console.log("funcção foi chamada")
+    console.log("funcção foi chamada");
 
     let nomeFilme = document.getElementById("pesquisa").value;
     let resultado = document.getElementById("resultado");
@@ -20,17 +20,15 @@ function buscarFilme()
 
         if(dados.movies && dados.movies.length > 0)
         {
-            for(let i = 0; i < dados.movies.length; i++)
+            for(let i = 0; i < 8; i++)
             {
                 resultado.innerHTML += 
-                "<h3>" + dados.movies[i].title + "</h3>" +
-                "<p>Língua Original: " + dados.movies[i].originalLanguage + "</p>" + 
-                "<p>Título Original: " + dados.movies[i].originalTitle + "</p>" +
-                "<p> Adulto: " + dados.movies[i].adult + "</p>" +
-                "<p>Data de Lançamento: " + dados.movies[i].releaseDate + "</p>" +
-                "<img src='https://image.tmdb.org/t/p/w500" + dados.movies[i].posterImage + "' width='150'><hr>" + 
-                "<p>Descrição: " + dados.movies[i].overview + "</p>" +
-                "<p>Generos: " + dados.movies[i].genres + "</p>";
+                "<div class='card-filme'>" + 
+                    "<img class='posterImage' src='https://image.tmdb.org/t/p/w500" + dados.movies[i].posterImage + "' width='150'>" +
+                    "<div class='overlay'>" +
+                        "<button id='descricaoButton' onclick='mostrarDescricao(${i})'>Ver Descrição</button>" +
+                    "</div>" +
+                "</div>";
             }
         }
         else
@@ -39,4 +37,22 @@ function buscarFilme()
         }
     }
     );
+}
+
+function mostrarDescricao(descricao)
+{
+    let filme = filmes[index];
+
+    let box = document.createElement("div");
+
+    box.id = "descricaoBox";
+
+    box.innerHTML = `
+        <p>Título: ${descricao.title}</p>
+        <p>Sinopse: ${descricao.overview}</p>
+        <p>Gêneros: ${descricao.genres}</p>
+        <button onclick="fecharDescricao()">Fechar</button>
+    `;
+
+    document.body.appendChild(box);
 }
