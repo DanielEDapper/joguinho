@@ -1,3 +1,7 @@
+console.log("Script carregado com sucesso!");
+
+let listaFilmes = [];
+
 function buscarFilme()
 {
     console.log("funcção foi chamada");
@@ -17,6 +21,7 @@ function buscarFilme()
     .then(dados => 
     {
         resultado.innerHTML = "";
+        listaFilmes = dados.movies;
 
         if(dados.movies && dados.movies.length > 0)
         {
@@ -26,13 +31,13 @@ function buscarFilme()
                 "<div class='card-filme'>" + 
                     "<img class='posterImage' src='https://image.tmdb.org/t/p/w500" + dados.movies[i].posterImage + "' width='150'>" +
                     "<div class='overlay'>" +
-                        "<button id='descricaoButton' onclick='mostrarDescricao(${i})'>Ver Descrição</button>" +
+                        "<button id='descricaoButton' onclick='mostrarDescricao(" + i + ")'>Ver Descrição</button>" +
                     "</div>" +
                 "</div>";
             }
         }
         else
-        {
+        {  
             resultado.innerHTML = "Filme não encontrado.";
         }
     }
@@ -41,18 +46,35 @@ function buscarFilme()
 
 function mostrarDescricao(descricao)
 {
-    let filme = filmes[index];
-
+    let movies = listaFilmes[descricao];
     let box = document.createElement("div");
+    let generos = [];
+
+    if(movies.genres && movies.genres.length > 0)
+    {
+        for(let i = 0; i < movies.genres.length && i < 3; i++)
+        {
+            generos.push(movies.genres[i]);
+        }
+    }
+    else
+    {
+        generos = "Gêneros não disponíveis";
+    }
 
     box.id = "descricaoBox";
 
-    box.innerHTML = `
-        <p>Título: ${descricao.title}</p>
-        <p>Sinopse: ${descricao.overview}</p>
-        <p>Gêneros: ${descricao.genres}</p>
-        <button onclick="fecharDescricao()">Fechar</button>
-    `;
+            box.innerHTML = 
+                "<div class='descricaoConteudo'>" +
+                    "<p>Título: "  + movies.title + "</p>" +
+                    "<p>Sinopse: " + movies.overview + "</p>"+ 
+                    "<p>Gêneros: " + generos.join(", ") + "</p>" +
+                    "<button id='descricaoButton' onclick='fecharDescricao()'>Fechar</button>" +
+                "</div>";
+            document.body.appendChild(box);
+}
 
-    document.body.appendChild(box);
+function fecharDescricao()
+{
+    document.getElementById("descricaoBox").remove();
 }

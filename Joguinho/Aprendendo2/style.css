@@ -1,7 +1,12 @@
+body{
+    background: #262525;
+}
+
 #buscah1{
     margin-left: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
+    color: white;
 }
 
 #pesquisa{
@@ -21,6 +26,12 @@
     color: white;
     border: none;
     border-radius: 4px;
+}
+
+#buscaButton:hover{
+    background-color: #460404;
+    transition: 0.5s;
+    color: white;
 }
 
 .grid-filmes {
@@ -76,6 +87,36 @@
     text-align: center;
 }
 
+#descricaoBox{
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+
+    background: #111;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+
+    z-index: 1000;
+}
+
+.descricaoConteudo{
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    object-fit: cover;
+
+    animation: aparecer 0.3s ease;
+}
+
 #descricaoButton{
     width: 120px;
     height: 42px;
@@ -92,24 +133,14 @@
     background-color: #5d0909;
 }
 
-#descricaoBox{
-    position: fixed;
 
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
-
-    width: 400px;
-
-    background: #111;
-    color: white;
-
-    padding: 25px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-
-    z-index: 1000;
+@keyframes aparecer{
+    from{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
