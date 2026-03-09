@@ -2,15 +2,21 @@ body{
     background: #0F0F0F;
 }
 
-#sistemaNome{
+.titulo{
     margin-left: 20px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 40px;
+    margin-bottom: 0%;
     color: #F5F5F5;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.marca{
+    color: #E50914;
 }
 
 #descricaoSistema{
     margin-left: 20px;
+    margin-top: 0.5%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: #B3B3B3;
@@ -18,7 +24,9 @@ body{
 
 #buscah2{
     margin-left: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    margin-top: 3%;
+    margin-bottom: 0.3%;
+    font-family:'Times New Roman', Times, serif;
     font-size: 30px;
     color: white;
 }
@@ -29,6 +37,17 @@ body{
     padding: 10px;
     font-size: 16px;
     background: #1F1F1F;
+    color: #F5F5F5;
+}
+
+#pesquisa::placeholder{
+    color: #8A8A8A;
+}
+
+#pesquisa:focus{
+    background: #1F1F1F;
+    color: #F5F5F5;
+    outline: none;
 }
 
 #buscaButton{
@@ -44,7 +63,7 @@ body{
 }
 
 #buscaButton:hover{
-    background-color: #FF2A2A;
+    background-color: #670909;
     transition: 0.5s;
     color: white;
 }
@@ -112,7 +131,7 @@ body{
 
     width: 400px;
 
-    background: #111;
+    background: #1F1F1F;
 
     padding: 25px;
 
@@ -124,7 +143,7 @@ body{
 }
 
 .descricaoConteudo{
-    background: white;
+    background: #E5E5E5;
     padding: 30px;
     border-radius: 10px;
     object-fit: cover;

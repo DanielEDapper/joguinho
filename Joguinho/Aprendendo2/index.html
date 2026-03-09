@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
-    <title>Buscador de Filmes</title>
+    <title>ScreenScore API</title>
 </head>
 <body>
-    <h1 id="sistemaNome">ScreenScore Movies Management</h1>
-    <h3 id="descricaoSistema">Seu sistema inteligente para gerenciar e descobrir filmes.</h3>
+    <header>
+        <h1 class="titulo">
+        <span class="marca">ScreenScore</span> Movies Management
+        </h1>
 
-    <h2 id="buscah2">Buscar Filme</h2>
-    <input type="text" id="pesquisa" placeholder="Digite o nome do filme">
-    <button id="buscaButton" onclick="buscarFilme()">Buscar</button>
+        <h3 id="descricaoSistema">Seu sistema inteligente para gerenciar e descobrir filmes.</h3>
+    </header>
+
+    <main>
+        <h2 id="buscah2">Descobrir Filmes Novos</h2>
+        <input type="text" id="pesquisa" placeholder="Digite o nome do filme">
+        <button id="buscaButton" onclick="buscarFilme()">Buscar</button>
     
-    <div id="resultado" class="grid-filmes"></div>
-
+        <div id="resultado" class="grid-filmes"></div>
+    </main>
 </body>
 </html>
