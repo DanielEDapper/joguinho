@@ -1,5 +1,68 @@
 body{
     background: #0F0F0F;
+    margin: 0;
+    justify-content: space-between;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.conteudoPrincipal{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.navegacaoPrincipalBox{
+    display: flex;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    margin-right: 100px;
+    margin-top: 48px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.navegacaoPrincipalBox:hover{
+    background: #1F1F1F;
+    transition: 0.5s;
+}
+
+.navegacaoPrincipal{
+    display: flex;
+}
+
+#pesquisa{
+    width: 0;
+    opacity: 0;
+
+    margin-right: 10px;
+    margin-top: 52px;
+
+    height: 20px;
+    padding: 10px;
+
+    font-size: 16px;
+    background: #1F1F1F;
+    color: #F5F5F5;
+
+    border: none;
+    overflow: hidden;
+
+    transition: width 0.35s ease, opacity 0.2s ease;
+}
+
+/* estado aberto */
+#pesquisa.ativo{
+    width: 500px;
+    opacity: 1;
 }
 
 .titulo{
@@ -15,11 +78,18 @@ body{
 }
 
 #descricaoSistema{
-    margin-left: 20px;
+    margin-left: 20px; 
     margin-top: 0.5%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: #B3B3B3;
+}
+
+#iconeLupa{
+    color: #F5F5F5;
+    display: flex;
+    width: 30px;
+    height: auto;
 }
 
 #buscah2{
@@ -29,15 +99,6 @@ body{
     font-family:'Times New Roman', Times, serif;
     font-size: 30px;
     color: white;
-}
-
-#pesquisa{
-    margin-left: 20px;
-    width: 500px;
-    padding: 10px;
-    font-size: 16px;
-    background: #1F1F1F;
-    color: #F5F5F5;
 }
 
 #pesquisa::placeholder{
@@ -52,18 +113,20 @@ body{
 
 #buscaButton{
     width: 100px;
-    height: 42px;
+    height: 40px;
     font-size: 16px;
-    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 52px;
     cursor: pointer;
     background-color: #E50914;
     color: #FFFFFF;
     border: none;
     border-radius: 4px;
+    display: none;
 }
 
 #buscaButton:hover{
-    background-color: #670909;
+    background-color: #b80710;
     transition: 0.5s;
     color: white;
 }

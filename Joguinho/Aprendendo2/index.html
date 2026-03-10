@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>ScreenScore API</title>
 </head>
 <body>
     <header>
-        <h1 class="titulo">
-        <span class="marca">ScreenScore</span> Movies Management
-        </h1>
+        <div class="conteudoPrincipal">
+            <h1 class="titulo">
+                <span class="marca">ScreenScore</span> Movies Management
+            </h1>
 
-        <h3 id="descricaoSistema">Seu sistema inteligente para gerenciar e descobrir filmes.</h3>
+            <h3 id="descricaoSistema">Seu sistema inteligente para gerenciar e descobrir filmes.</h3>
+        </div>
+        
+        <nav class="navegacaoPrincipal">
+            <button id="buscaButton" onclick="buscarFilme()">Buscar</button>
+            <input type="text" id="pesquisa" placeholder="Digite o nome do Filme: ">
+            <button class="navegacaoPrincipalBox" onclick="mostrarBusca()">
+                <i id="iconeLupa" data-lucide="search"></i>
+            </button>
+        </nav>
     </header>
 
     <main>
-        <h2 id="buscah2">Descubra Filmes Novos</h2>
-        <input type="text" id="pesquisa" placeholder="Digite o nome do filme">
-        <button id="buscaButton" onclick="buscarFilme()">Buscar</button>
+        
     
         <div id="resultado" class="grid-filmes"></div>
     </main>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

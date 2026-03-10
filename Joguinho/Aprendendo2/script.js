@@ -2,6 +2,19 @@ console.log("Script carregado com sucesso!");
 
 let listaFilmes = [];
 
+function mostrarBusca(){
+    const campo = document.getElementById("pesquisa");
+    const botao = document.getElementById("buscaButton");
+
+    campo.classList.toggle("ativo");
+
+    if(campo.classList.contains("ativo")){
+        botao.style.display = "block";
+    }else{
+        botao.style.display = "none";
+    }
+}
+
 function buscarFilme()
 {
     console.log("funcção foi chamada");
@@ -25,7 +38,7 @@ function buscarFilme()
 
         if(dados.movies && dados.movies.length > 0)
         {
-            for(let i = 0; i < 8; i++)
+            for(let i = 0; i < 13; i++)
             {
                 let poster = dados.movies[i].posterImage;
 
