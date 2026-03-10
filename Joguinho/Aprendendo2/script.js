@@ -23,7 +23,7 @@ function buscarFilme()
     let resultado = document.getElementById("resultado");
 
     let larguraResultado = resultado.offsetWidth;
-    let larguraCard = 180 + 1;
+    let larguraCard = 180 + 10;
     let quantidadeFilmes = Math.floor(larguraResultado / larguraCard);
 
     fetch(`https://screenscore-api-yrw8.onrender.com/filmes/externos?title=${nomeFilme}`)
@@ -48,7 +48,7 @@ function buscarFilme()
 
                 if(!poster)
                 {
-                    poster = "imagemNaoEncontrada.jpg";
+                    poster = "img/imagemNaoEncontrada.jpg";
                 }
                 else{
                     poster = "https://image.tmdb.org/t/p/w500" + poster;
@@ -58,7 +58,7 @@ function buscarFilme()
                 "<div class='card-filme'>" + 
                     "<img class='posterImage' src='" + poster + "' width='150'>" +
                     "<div class='overlay'>" +
-                        "<button id='descricaoButton' onclick='mostrarDescricao(" + i + ")'>Ver Descrição</button>" +
+                        "<button id='descricaoButton' onclick='mostrarDescricao(this, " + i + ")'>Ver Descrição</button>" +
                     "</div>" +
                 "</div>";
             }
@@ -71,34 +71,23 @@ function buscarFilme()
     );
 }
 
-function mostrarDescricao(descricao)
+function mostrarDescricao(botao, indice)
 {
-    let movies = listaFilmes[descricao];
-    let box = document.createElement("div");
-    let generos = [];
+    let movie = listaFilmes[indice];
 
-    if(movies.genres && movies.genres.length > 0)
-    {
-        for(let i = 0; i < movies.genres.length && i < 3; i++)
-        {
-            generos.push(movies.genres[i]);
-        }
-    }
-    else
-    {
-        generos = "Gêneros não disponíveis";
-    }
+    let card = botao.closest(".card-filme");
 
-    box.id = "descricaoBox";
+    let descricao = document.createElement("div");
+    descricao.className = "descricaoBox";
 
-            box.innerHTML = 
-                "<div class='descricaoConteudo'>" +
-                    "<p>Título: "  + movies.title + "</p>" +
-                    "<p>Sinopse: " + movies.overview + "</p>"+ 
-                    "<p>Gêneros: " + generos.join(", ") + "</p>" +
-                    "<button id='descricaoButton' onclick='fecharDescricao()'>Fechar</button>" +
-                "</div>";
-            document.body.appendChild(box);
+    descricao.innerHTML =
+    "<div class='descricaoConteudo'>" + 
+        "<p><b>Título:</b> " + movie.title + "</p>" +
+        "<p><b>Sinopse:</b> " + movie.overview + "</p>" +
+        "<button id='descricaoButton' onclick='fecharDescricao'>Fechar</button>" +
+    "</div>";
+
+    card.appendChild(descricao);
 }
 
 function fecharDescricao()

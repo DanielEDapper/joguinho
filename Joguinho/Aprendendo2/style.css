@@ -139,11 +139,14 @@ header{
 }
 
 .card-filme {
+    display: flex;
     background: #111;
     color: white;
     text-align: center;
     width: 150px;
     position: relative;
+    gap: 15px;
+    align-items: flex-start;
 }
 
 .card-filme img {
@@ -184,8 +187,9 @@ header{
     text-align: center;
 }
 
-#descricaoBox{
+.descricaoBox{
     position: fixed;
+    display: flex;
 
     top: 50%;
     left: 50%;
@@ -206,7 +210,7 @@ header{
 }
 
 .descricaoConteudo{
-    background: #E5E5E5;
+    background: #cf1f1f;
     padding: 30px;
     border-radius: 10px;
     object-fit: cover;
