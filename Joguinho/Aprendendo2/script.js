@@ -27,9 +27,19 @@ function buscarFilme()
         {
             for(let i = 0; i < 8; i++)
             {
+                let poster = dados.movies[i].posterImage;
+
+                if(!poster)
+                {
+                    poster = "imagemNaoEncontrada.jpg";
+                }
+                else{
+                    poster = "https://image.tmdb.org/t/p/w500" + poster;
+                }
+
                 resultado.innerHTML += 
                 "<div class='card-filme'>" + 
-                    "<img class='posterImage' src='https://image.tmdb.org/t/p/w500" + dados.movies[i].posterImage + "' width='150'>" +
+                    "<img class='posterImage' src='" + poster + "' width='150'>" +
                     "<div class='overlay'>" +
                         "<button id='descricaoButton' onclick='mostrarDescricao(" + i + ")'>Ver Descrição</button>" +
                     "</div>" +
