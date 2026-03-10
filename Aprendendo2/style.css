@@ -1,0 +1,37 @@
+.busca{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:xx-large;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+
+#pesquisa{
+    margin-left: 200px;
+    height: 40px;
+    width: 1000px;
+    font-size: large;
+}
+
+.botaoBusca{
+    margin-left: 5px;
+    height: 45px;
+    width: 200px;
+    font-size: large;
+    background: rgb(162, 162, 231);
+}
+
+.botaoBusca:hover{
+    background: rgb(77, 77, 231);
+    transition: 0.5s;
+}
+
+#resultado{
+    margin-left: 200px;
+    width: 1205px;
+    height: 700px;
+    border: solid 5 rgb(77, 77, 231);
+}
+
+.summaryBusca{
+    margin-left: 40px;
+}
